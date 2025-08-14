@@ -470,3 +470,4 @@ for i, v in enumerate(top_partnerships['total_runs']):
 
 # Display in Streamlit
 st.pyplot(fig)
+# the project is done
