@@ -1,129 +1,108 @@
 # 🏏 IPL Dataset Analysis
 
 ## 📌 Project Overview
-This project explores the **Indian Premier League (IPL)** using two datasets:
-1. **matches.csv** – Match-level details (season, teams, venue, winner, etc.)
+This project explores the **Indian Premier League (IPL)** through two datasets:
+1. **matches.csv** – Match-level details (teams, venue, toss, results, etc.)
 2. **deliveries.csv** – Ball-by-ball details (runs, wickets, extras, partnerships, etc.)
 
-The goal is to analyze IPL matches and uncover patterns in team performance, batting partnerships, bowling trends, and player contributions.
+By analyzing these datasets, we uncover facts about teams, players, partnerships, dismissals, scoring patterns, extras, and bowling dominance.
 
 ---
 
 ## 📂 Dataset Description
 
 ### **matches.csv**
-| Column | Description |
-|--------|-------------|
-| id | Match ID (primary key) |
-| season | IPL season |
-| city | City where match was played |
-| date | Date of the match |
-| match_type | Type of match |
-| player_of_match | Best performing player |
-| venue | Stadium/venue |
-| team1, team2 | Competing teams |
-| toss_winner | Toss winning team |
-| toss_decision | Bat/bowl decision |
-| winner | Winning team |
-| result | Match result (normal, tie, etc.) |
-| result_margin | Margin of victory |
-| target_runs, target_overs | Applicable in chases |
-| super_over | Yes/No |
-| umpire1, umpire2 | Match officials |
+- Contains **1095 entries** with 20 columns.  
+- Key columns: `id`, `season`, `city`, `date`, `venue`, `team1`, `team2`, `toss_winner`, `winner`, `player_of_match`, `result_margin`.
 
 ### **deliveries.csv**
-| Column | Description |
-|--------|-------------|
-| match_id | Match identifier |
-| inning | Inning number |
-| batting_team, bowling_team | Teams involved |
-| over, ball | Ball details |
-| batter, bowler, non_striker | Players involved |
-| batsman_runs | Runs by batter |
-| extra_runs | Runs from extras |
-| total_runs | Total runs (batter + extras) |
-| extras_type | Type of extra (wide, no-ball, etc.) |
-| is_wicket | Whether a wicket fell |
-| player_dismissed | Name of dismissed player |
-| dismissal_kind | Type of dismissal |
-| fielder | Fielder involved |
+- Contains **260,920 entries** with 17 columns.  
+- Key columns: `match_id`, `inning`, `batting_team`, `bowling_team`, `over`, `ball`, `batter`, `bowler`, `total_runs`, `is_wicket`, `player_dismissed`, `dismissal_kind`.
 
 ---
 
-## 📊 Exploratory Data Analysis (Graphs & Insights)
+## 📊 Analysis & Insights
 
-### 🔥 Player of the Match Awards
-  
-- **AB de Villiers (25 awards)** leads the chart, followed by **Chris Gayle (22)** and **Rohit Sharma (19)**.  
-- Shows how individual brilliance shaped multiple matches.
-
----
-
-### 👬 Top Batting Partnerships
-  
-- Highest partnership: **AB de Villiers & Virat Kohli (229 runs)**.  
-- Other strong pairs: KL Rahul – Q de Kock, Warner – Bairstow, Gilchrist – Marsh.  
-- Highlights the impact of consistent partnerships on team totals.
+### 🌟 Player Performances
+- **Player of the Match Awards**    
+  - **AB de Villiers (25 awards)** tops the list.  
+  - Followed by **Chris Gayle (22)**, **Rohit Sharma (19)**, **Virat Kohli (18)**, and **David Warner (18)**.  
+  - These players consistently changed the course of matches.
 
 ---
 
-### 🏏 Dismissal Types
- 
-- **Caught** is the most common dismissal mode.  
-- Followed by **Bowled** and **LBW**.  
-- Suggests batters take aerial risks, and bowlers use full deliveries effectively.
+### 👬 Batting Partnerships
+- **Best Partnerships in IPL History (by runs)**    
+  - **Virat Kohli & AB de Villiers**: 229 runs and 215 runs (two different matches).  
+  - **Sai Sudharsan & Shubman Gill**: 210 runs.  
+  - **KL Rahul & Quinton de Kock**: 210 runs.  
+  - **Gilchrist & Marsh**: 206 runs.  
+  - Other strong pairs include Gayle–Kohli (204), Warner–Ojha (189), Warner–Bairstow (185), Lynn–Gambhir (184), Rahul–Agarwal (183).  
+- **Key Insight:** Partnerships often dictate match outcomes, with certain duos dominating repeatedly.
 
 ---
 
-### 📈 Runs per Over
-  
-- Most overs yield between **14–16 runs** consistently.  
-- Confirms the "death overs acceleration" trend in T20 cricket.
+### 🏏 Dismissals
+- **Types of Dismissals**    
+  - **Caught** is the most common mode of dismissal.  
+  - Followed by **Bowled** and **LBW**.  
+- **Key Insight:** Aerial shots carry the highest risk, making field placement critical.
 
 ---
 
-### ⚠️ Extras Contribution
-  
-- **Wides contribute the most extra runs**, followed by **Leg Byes** and **No Balls**.  
-- Bowling discipline plays a huge role in restricting runs.
+### 📈 Scoring Trends
+- **Runs per Over**    
+  - Across most overs, teams score consistently between **14–16 runs**.  
+  - Death overs (16–20) see acceleration, with batsmen targeting boundaries.  
+- **Key Insight:** Consistency in scoring reflects aggressive T20 batting strategies.
 
 ---
 
-### 🎯 Dot Ball Specialists  
-- **Bhuvneshwar Kumar**: 1793 dot balls  
-- **Sunil Narine**: 1694  
-- **R. Ashwin**: 1623  
-- **Jasprit Bumrah**: 1397  
-- **Piyush Chawla**: 1337  
-- Dot balls show bowling pressure applied consistently.
+### ⚠️ Extras
+- **Contribution of Extras**   
+  - **Wides contribute the most runs** among extras.  
+  - Followed by **Leg Byes** and **No Balls**.  
+- **Key Insight:** Lack of bowling discipline significantly boosts opposition totals.
 
 ---
 
-## 📝 Key Insights
-- **Star Performers:** AB de Villiers, Chris Gayle, and Rohit Sharma dominate match awards.  
-- **Winning Partnerships:** Kohli–AB de Villiers stand out as record breakers.  
-- **Bowling Impact:** Dot-ball kings like Bhuvneshwar & Narine play pivotal roles.  
-- **Scoring Trends:** Runs spike in the final overs (death overs).  
-- **Discipline Factor:** Extras, especially wides, contribute significantly to team totals.  
+### 🎯 Bowling Impact
+- **Dot Ball Specialists**    
+  - **Bhuvneshwar Kumar**: 1793 dot balls.  
+  - **Sunil Narine**: 1694.  
+  - **R. Ashwin**: 1623.  
+  - **Jasprit Bumrah**: 1397.  
+  - **Piyush Chawla**: 1337.  
+- **Key Insight:** These bowlers consistently built pressure, proving invaluable in T20 where every ball counts.
+
+---
+
+## 📝 Summary of Facts
+- **AB de Villiers** is the most impactful player (25 PoM awards).  
+- **Kohli & AB de Villiers** dominate the record books with the highest partnerships.  
+- **Caught dismissals** are most frequent, showing risk in aggressive batting.  
+- **Scoring stability** lies between 14–16 runs per over, with spikes at the death.  
+- **Wides** are the biggest extras contributor.  
+- **Dot ball kings**: Bhuvneshwar Kumar, Narine, Ashwin, Bumrah, Chawla.  
 
 ---
 
 ## ⚙️ Tech Stack
 - **Python** (Pandas, NumPy)  
-- **Matplotlib & Seaborn** for data visualization  
-- **Jupyter Notebook** for interactive analysis  
+- **Matplotlib & Seaborn** for visualization  
+- **Jupyter Notebook** for exploration  
 
 ---
 
-## 🚀 Future Work
-- Predictive modeling: Match winners & player performances.  
-- Player comparison dashboards.  
-- Venue-specific strategy analysis.  
+## 🚀 Future Enhancements
+- Build predictive models (e.g., predict match winners, player of the match).  
+- Compare players across eras.  
+- Venue-based strategy analysis.  
 
 ---
 
 ## 🙌 Acknowledgments
-Dataset source: Kaggle IPL datasets.  
-Inspired by cricket analytics projects worldwide.  
+Dataset sourced from **Kaggle IPL datasets**.  
+Inspired by the passion for cricket analytics and T20 strategy.  
 
 ---
